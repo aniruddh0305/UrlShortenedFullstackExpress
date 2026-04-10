@@ -1,0 +1,16 @@
+{
+  "name": "url-shortened-fullstack-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --env-file=.env --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+     "zod": "^4.3.6"
+  }
+}

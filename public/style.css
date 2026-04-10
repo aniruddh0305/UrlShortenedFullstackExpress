@@ -1,0 +1,44 @@
+.wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: -webkit-fill-available;
+  background: aliceblue;
+}
+
+.container {
+  border: 1px solid black;
+  background: gainsboro;
+  box-shadow: 5px 5px 10px gray;
+  max-width: min-content;
+  & h1 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.formElements {
+  padding: 10px 20px;
+  & div {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.submitBtn {
+  padding: 8px;
+  background-color: dodgerblue;
+  display: flex;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.form-label {
+  margin-right: 34px;
+}
+
+#shortened-url {
+  padding: 20px;
+}

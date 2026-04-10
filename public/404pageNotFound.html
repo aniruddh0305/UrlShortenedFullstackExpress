@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>URL shortner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Page not found</h1>
+            <button id="goToHomPageBtn">
+                Go to Home page
+            </button>
+            <div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById('goToHomPageBtn').addEventListener('click', () => {
+        console.log('@@@ go to home page btn clicked');
+        window.location.href = '/';
+    })
+</script>
+
+</html>
