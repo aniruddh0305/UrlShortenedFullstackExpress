@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>URL shortner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1> URL Shortner</h1>
+            <form id="shortenUrlForm">
+
+                <div class="formElements">
+
+                    <div>
+                        <label class="form-label" for="url">Enter URL</label>
+                        <input type="url" name="url" id="url">
+                    </div>
+
+                    <div>
+                        <label for="shortCode">Enter short code</label>
+                        <input type="text" name="shortCode" id="shortCode">
+                    </div>
+
+                </div>
+
+                <button class="submitBtn" type="submit">Submit</button>
+
+            </form>
+            <div>
+                <h1>Shortened URL's </h1>
+                <div class="shortened-url">
+                    <ul>
+                        <% for (let shortenedUrl of shortenedLinkDbData) { %>
+
+                            <% for (let shortCode in shortenedUrl) { %>
+
+                                <% if (shortCode !=="_id" ) { %>
+
+                                    <li>
+                                        <a href="/<%= shortCode %>" target="_blank">
+                                            <%= host %>/<%= shortCode %>
+                                        </a>
+
+                                        --> <%= shortenedUrl[shortCode] %>
+                                    </li>
+
+                                    <% } %>
+
+                                        <% } %>
+
+                                            <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const form = document.getElementById("shortenUrlForm");
+
+    form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        const response = await fetch("/save-shortenLink", {
+            method: "POST",
+            body: new URLSearchParams(formData)
+        });
+
+        const result = await response.json();
+
+        console.log(result);
+
+        window.location.href = "/";
+    });
+</script>
+
+</html>

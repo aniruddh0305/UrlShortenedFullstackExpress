@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>URL shortner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include('header') %>
+        <div class="wrapper">
+
+            <div>
+                Report Card Ejs
+                <div>
+                    <p>
+                        student name <%= student.name %>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        student class <%= student.class %>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        student score <%= student.grade %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <%- include('footer') %>
+</body>
+
+</html>
